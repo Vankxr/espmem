@@ -61,7 +61,7 @@ program
                             elf.body.sections.forEach(
                                 function (section)
                                 {
-                                    if(!section || !section.name || !section.size)
+                                    if(!section || !section.name || !section.size || !section.flags.alloc || section.type == "nobits")
                                         return;
 
                                     for(var i = 0; i < mem_sections.length; i++)
