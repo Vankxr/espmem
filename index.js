@@ -123,3 +123,18 @@ function hexpad(number, length)
 
     return "0x" + str;
 }
+
+function humanify_size(size)
+{
+    var unit = ["B", "KB", "MB", "GB", "TB"];
+    var i = 0;
+
+    while(size > 1024 && i < 5)
+    {
+        size /= 1024;
+
+        i++;
+    }
+
+    return size.toFixed(2) + " " + unit[i];
+}
